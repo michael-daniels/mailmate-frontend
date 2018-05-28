@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.JS Tutorial</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="wrapper">
+
+        <nav>
+          <div class="logo text-icons">mailmate</div>
+        </nav>
+
+        <div class="row">
+          <div class="tabs">
+
+                <div class="tab col m3">
+                  <button id="1" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">Contacts</button>
+                </div>
+
+                <div class="tab col m3">
+                  <button id="2" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">Documents</button>
+                </div>
+
+                <div class="tab col m3">
+                  <button id="3" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">Review</button>
+                </div>
+
+                <div class="tab col m3">
+                  <button id="4" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">History</button>
+                </div>
+
+          </div>
+        </div>
+
+        <div class="tab-wrapper">
+
+          <div id="tab1" class="tab-1 tab-view">
+            <div class="row">
+              <div class="col m6">
+                <h5 class="light-primary-color">Upload Contacts</h5>
+
+                <form class="" action="index.html" method="post">
+                  <input type="text" class="input-field" name="name" value="" placeholder="Contact Name">
+                  <input type="text" class="input-field" name="street" value="" placeholder="Street Addresss">
+                  <input type="text" class="input-field" name="street2" value="" placeholder="Street 2 (optional)">
+                  <input type="text" class="input-field" name="city" value="" placeholder="City">
+                  <input type="text" class="input-field" name="state" value="" placeholder="State">
+                  <input type="text" class="input-field" name="zip" value="" placeholder="ZIP">
+                  <button class="btn" type="submit" name="button">Add Contact</button>
+                </form>
+              </div>
+              <div class="col m6">
+                <h5 class="light-primary-color">My Contacts</h5>
+                <ul class="collection">
+                  <div class="" v-for="contact in loadedContacts">
+                    <li class="collection-item" v-on:click="contactClicked">
+                      <span class="title">{{contact.name}}</span>
+                      <p>123 {{contact.address.street}} {{contact.address.suite}}, {{contact.address.city}}, {{contact.address.zipcode}}</p>
+                    </li>
+                    <span class="divider"></span>
+                  </div>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="tab2" class="tab-2 tab-view">
+            <div class="row">
+              <div class="col m8">
+                upload document templates
+              </div>
+              <div class="col m4">
+                view/edit/delete document templates (clicking on one brings up modal)
+              </div>
+            </div>
+          </div>
+          <div id="tab3" class="tab-3 tab-view">
+            Tab 3
+          </div>
+          <div id="tab4" class="tab-4 tab-view">
+            Tab 4
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+
+  <!-- insert model.js -->
+  <script src="./model.js"></script>
+</html>
