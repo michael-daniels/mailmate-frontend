@@ -26,7 +26,7 @@ document.getElementById('tab1').style.display = 'block'
         document.getElementById(`tab${event.target.id}`).style.display = 'block'
       },
       loadAllContacts: () => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://localhost:8000/')
           .then((response) => {
             return response.json()
           })
@@ -37,6 +37,10 @@ document.getElementById('tab1').style.display = 'block'
           .catch((err) => {
             console.log(err)
           })
+      },
+      addNewContact: (event) => {
+        event.preventDefault()
+        app.loadedContacts.unshift(app.newContact)
       },
       contactClicked: (event) => {
         alert(event.target.class)

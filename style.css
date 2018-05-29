@@ -2,6 +2,9 @@ nav {
   background-color: #009688;
   text-align: center;
 }
+body {
+  background-color: #F8F8F8;
+}
 button {
   width:90%;
 }
@@ -36,6 +39,7 @@ hr {
 }
 .tabs {
   width: 100%;
+  background-color: #F8F8F8;
 }
 .tab-view {
   display:none;
@@ -67,5 +71,15 @@ hr {
 .collection {
   text-align:left;
   overflow-y: scroll;
-  height:400px;
+  height:370px;
+}
+.contact-name {
+  font-size: 20px;
+}
+.create-document-textarea {
+  background-color: white;
+  border-radius: 0px;
+  width:100%;
+  min-height:70vh;
+  padding:75px 75px;
 }
