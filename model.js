@@ -3,7 +3,7 @@ document.getElementById('tab1').style.display = 'block'
     el: '#app',
     data: {
       loadedContacts: [],
-      loadedDocuments: [{title:'Collection Notice', content:"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}],
+      loadedDocuments: [],
       newContact: {
         contactName: '',
         streetAddress: '',
@@ -32,13 +32,26 @@ document.getElementById('tab1').style.display = 'block'
         document.getElementById(`tab${event.target.id}`).style.display = 'block'
       },
       loadAllContacts: () => {
-        fetch('http://localhost:8000/')
+        fetch('http://localhost:8000/contacts')
           .then((response) => {
             return response.json()
           })
           .then((data) => {
             console.log('DATA', data)
             app.loadedContacts = data
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      },
+      loadAllDocuments: () => {
+        fetch('http://localhost:8000/documents')
+          .then((response) => {
+            return response.json()
+          })
+          .then((data) => {
+            console.log('DOCUMENT DATA', data)
+            app.loadedDocuments = data
           })
           .catch((err) => {
             console.log(err)
@@ -71,3 +84,4 @@ document.getElementById('tab1').style.display = 'block'
     }
   })
   app.loadAllContacts()
+  app.loadAllDocuments()

@@ -77,7 +77,7 @@ hr {
   font-size: 20px;
 }
 .upload-contact-form {
-
+  max-width: 90%
 }
 .create-document-title-input {
   max-width:90%;
