@@ -1,3 +1,11 @@
+let storedToken = localStorage.getItem('token')
+if (storedToken === null) {
+  let token = window.location.href.indexOf('user_token=')
+  token = window.location.href.slice(token + 11, window.location.href.length)
+  localStorage.setItem('token', token)
+  console.log('stored token')
+}
+
 document.getElementById('tab1').style.display = 'block'
   var app = new Vue({
     el: '#app',
@@ -32,7 +40,7 @@ document.getElementById('tab1').style.display = 'block'
         document.getElementById(`tab${event.target.id}`).style.display = 'block'
       },
       loadAllContacts: () => {
-        fetch('http://localhost:8000/contacts')
+        fetch(`http://localhost:8000/contacts?user_token=${localStorage.getItem('token')}`)
           .then((response) => {
             return response.json()
           })
@@ -45,7 +53,7 @@ document.getElementById('tab1').style.display = 'block'
           })
       },
       loadAllDocuments: () => {
-        fetch('http://localhost:8000/documents')
+        fetch(`http://localhost:8000/documents?user_token=${localStorage.getItem('token')}`)
           .then((response) => {
             return response.json()
           })

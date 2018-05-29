@@ -1,5 +1,5 @@
 nav {
-  background-color: #009688;
+  background-color: #2196F3;
   text-align: center;
 }
 body {
@@ -21,6 +21,15 @@ hr {
   border-bottom:0
 }
 */
+.btn {
+  background-color: #2196F3
+}
+.btn:hover {
+  background-color: #2196F3
+}
+.btn:focus {
+  background-color: #1976D2;
+}
 .row {
   margin:10px;
 }
@@ -32,7 +41,7 @@ hr {
   text-align: center;
 }
 .tab-wrapper {
-  border: 4px #009688 solid;
+  border: 4px #2196F3 solid;
   border-radius: 5px;
   margin:0 25px;
   min-height: 90vh;
@@ -45,13 +54,13 @@ hr {
   display:none;
 }
 .primary-color {
-  color: #009688;
+  color: #2196F3;
 }
 .dark-primary-color {
-  color: #00796B;
+  color: #1976D2;
 }
 .light-primary-color {
-  color: #B2DFDB;
+  color: #BBDEFB;
 }
 .accent-color {
   color:#009688;
