@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="tab col m3">
-                  <button id="3" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">Review</button>
+                  <button id="3" class="btn primary-color text-icons" v-on:click="showTab" type="button" name="button">Send</button>
                 </div>
 
                 <div class="tab col m3">
@@ -53,7 +53,7 @@
               <div class="col m6">
                 <h5 class="light-primary-color">Upload Contacts</h5>
 
-                <form class="" action="index.html" method="post">
+                <form class="upload-contact-form" action="index.html" method="post">
                   <input v-model="newContact.contactName" type="text" class="input-field" name="name" value="" placeholder="Contact Name">
                   <input v-model="newContact.streetAddress" type="text" class="input-field" name="street" value="" placeholder="Street Address">
                   <input v-model="newContact.street2" type="text" class="input-field" name="street2" value="" placeholder="Street 2 (optional)">
@@ -82,17 +82,19 @@
             <div class="row">
               <div class="col m8">
                 <h5 class="light-primary-color">Create Document</h5>
-                <textarea class="create-document-textarea" placeholder="Write new documents here">
+                <input v-model="newDocument.title" class="create-document-title-input" type="text" name="" value="" placeholder="Document Title"/>
+                <textarea v-model="newDocument.content" class="create-document-textarea" placeholder="Write new documents here">
 
                 </textarea>
+                <button v-on:click="addNewDocument" class="btn" type="submit" name="button">Add Document Template</button>
               </div>
               <div class="col m4">
                 <h5 class="light-primary-color">My Documents</h5>
                 <ul class="collection">
-                  <div class="" v-for="contact in loadedContacts">
+                  <div class="" v-for="document in loadedDocuments">
                     <li class="collection-item" v-on:click="contactClicked">
-                      <span class="title contact-name">{{contact.contactName}}</span>
-                      <p>{{contact.streetAddress}} {{contact.street2}}, {{contact.city}}, {{contact.zip}}</p>
+                      <span class="title contact-name">{{document.title}}</span>
+                      <p>{{document.content.slice(0,50) + '...'}}</p>
                     </li>
                     <span class="divider"></span>
                   </div>

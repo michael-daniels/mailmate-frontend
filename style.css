@@ -76,10 +76,16 @@ hr {
 .contact-name {
   font-size: 20px;
 }
+.upload-contact-form {
+
+}
+.create-document-title-input {
+  max-width:90%;
+}
 .create-document-textarea {
   background-color: white;
   border-radius: 0px;
-  width:100%;
+  width:90%;
   min-height:70vh;
   padding:75px 75px;
 }
