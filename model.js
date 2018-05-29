@@ -68,7 +68,7 @@ document.getElementById('tab1').style.display = 'block'
       addNewContact: (event) => {
         event.preventDefault()
         app.loadedContacts.unshift(app.newContact)
-        //FETCH POST to /contacts HERE
+
         fetch(`http://localhost:8000/contacts?user_token=${localStorage.getItem('token')}`, {
           method: 'post',
           headers:{
@@ -94,6 +94,19 @@ document.getElementById('tab1').style.display = 'block'
       addNewDocument: (event) => {
         event.preventDefault()
         app.loadedDocuments.unshift(app.newDocument)
+
+        fetch(`http://localhost:8000/documents?user_token=${localStorage.getItem('token')}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(app.newDocument)
+        })
+          .then((response) => {
+            console.log(response)
+          })
+
         app.newDocument = {
           title:'',
           content:''
