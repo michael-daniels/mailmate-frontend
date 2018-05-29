@@ -68,6 +68,19 @@ document.getElementById('tab1').style.display = 'block'
       addNewContact: (event) => {
         event.preventDefault()
         app.loadedContacts.unshift(app.newContact)
+        //FETCH POST to /contacts HERE
+        fetch(`http://localhost:8000/contacts?user_token=${localStorage.getItem('token')}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(app.newContact)
+        })
+          .then((response) => {
+            console.log(response)
+          })
+
         app.newContact = {
           contactName: '',
           streetAddress: '',

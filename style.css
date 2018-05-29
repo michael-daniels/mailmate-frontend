@@ -11,16 +11,9 @@ button {
 hr {
   height:1px
 }
-/*
-.tab-button-focus {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border:4px gray solid;
-  border-radius: 5px;
-  height:50px;
-  border-bottom:0
+.input-field {
+  border-bottom:
 }
-*/
 .btn {
   background-color: #2196F3
 }
