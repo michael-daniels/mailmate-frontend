@@ -35,9 +35,14 @@ document.getElementById('tab1').style.display = 'block'
     methods: {
       showTab: (event) => {
         let allTabs = document.querySelectorAll('.tab-view')
+        let allTabButtons = document.querySelectorAll('.single-tab')
+        console.log('TAB BUTTONS', allTabButtons)
         for (let i = 0; i < allTabs.length; i++) {
           allTabs[i].style.display = 'none'
+          allTabButtons[i].classList.remove('tab-active')
         }
+        event.target.classList.add('tab-active')
+        console.log(event.target.classList.value)
         document.getElementById(`tab${event.target.id}`).style.display = 'block'
       },
       loadAllContacts: () => {

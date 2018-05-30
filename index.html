@@ -29,19 +29,19 @@
           <div class="tabs">
 
                 <div class="tab col m3">
-                  <button id="1" class="btn primary-color z-depth-0" v-on:click="showTab" type="button" name="button">Contacts</button>
+                  <button id="1" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">Contacts</button>
                 </div>
 
                 <div class="tab col m3">
-                  <button id="2" class="btn primary-color z-depth-0" v-on:click="showTab" type="button" name="button">Documents</button>
+                  <button id="2" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">Documents</button>
                 </div>
 
                 <div class="tab col m3">
-                  <button id="3" class="btn primary-color z-depth-0" v-on:click="showTab" type="button" name="button">Send</button>
+                  <button id="3" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">Send</button>
                 </div>
 
                 <div class="tab col m3">
-                  <button id="4" class="btn primary-color z-depth-0" v-on:click="showTab" type="button" name="button">History</button>
+                  <button id="4" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">History</button>
                 </div>
 
           </div>
@@ -78,7 +78,7 @@
                 <ul class="collection contact-document-list">
                   <div class="" v-for="contact in loadedContacts">
                     <li class="collection-item">
-                      <span class="title contact-name" v-on:click="contactClicked">{{contact.contactName}}</span>
+                      <span class="title contact-name secondary-text" v-on:click="contactClicked">{{contact.contactName}}</span>
                       <a href="#"><p v-on:click="setMapLocation">{{contact.streetAddress}} {{contact.street2}}, {{contact.city}}, {{contact.zip}}</p></a>
                     </li>
                     <span class="divider"></span>

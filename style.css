@@ -34,13 +34,13 @@ hr {
   margin:10px;
 }
 .logo {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   font-family: Quicksand;
   margin-left:5px;
 }
 .fa-envelope {
-  font-size: 30px;
+  font-size: 23px;
   color:#2196F3;
   margin-right: 0;
 }
@@ -103,9 +103,13 @@ hr {
   background-color: white;
   border-radius: 0px;
   width:90%;
-  min-height:70vh;
+  min-height:40vh;
   padding:75px 75px;
 }
 .contact-document-list {
   margin-top:30px;
+}
+.tab-active {
+  background-color: #2196F3;
+  color:white;
 }
