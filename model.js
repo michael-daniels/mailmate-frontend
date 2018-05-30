@@ -29,7 +29,8 @@ document.getElementById('tab1').style.display = 'block'
         id:'',
         title:'',
         content:'',
-      }
+      },
+      currentMapLocation:'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=United+States'
     },
     methods: {
       showTab: (event) => {
@@ -114,6 +115,9 @@ document.getElementById('tab1').style.display = 'block'
       },
       contactClicked: (event) => {
         alert(event.target.class)
+      },
+      setMapLocation: (event) => {
+        app.currentMapLocation = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=' + event.target.innerHTML
       }
     }
   })
