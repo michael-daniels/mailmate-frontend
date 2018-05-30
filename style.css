@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 nav {
   background-color: #F9F9F9;
   text-align: center;
@@ -32,8 +34,15 @@ hr {
   margin:10px;
 }
 .logo {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+  font-family: Quicksand;
+  margin-left:5px;
+}
+.fa-envelope {
+  font-size: 30px;
+  color:#2196F3;
+  margin-right: 0;
 }
 .wrapper {
   text-align: center;
