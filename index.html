@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="tab col m3">
-                  <button id="3" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">Send</button>
+                  <button id="3" class="btn primary-color z-depth-0 single-tab" v-on:click="showTab" type="button" name="button">Mail</button>
                 </div>
 
                 <div class="tab col m3">
@@ -70,7 +70,7 @@
                   <input v-model="newContact.city" type="text" class="input-field" name="city" value="" placeholder="City">
                   <input v-model="newContact.state" type="text" class="input-field" name="state" value="" placeholder="State">
                   <input v-model="newContact.zip" type="text" class="input-field" name="zip" value="" placeholder="ZIP">
-                  <button v-on:click="addNewContact" class="btn" type="submit" name="button">Add Contact</button>
+                  <button v-on:click="addNewContact" class="btn z-depth-0" type="submit" name="button">Add Contact</button>
                 </form>
               </div>
               <div class="col m6">
@@ -78,8 +78,18 @@
                 <ul class="collection contact-document-list">
                   <div class="" v-for="contact in loadedContacts">
                     <li class="collection-item">
-                      <span class="title contact-name secondary-text" v-on:click="contactClicked">{{contact.contactName}}</span>
-                      <a href="#"><p v-on:click="setMapLocation">{{contact.streetAddress}} {{contact.street2}}, {{contact.city}}, {{contact.zip}}</p></a>
+                      <div class="row">
+                        <div class="col m1">
+                          <i class="far fa-edit primary-color"></i>
+                        </div>
+                        <div class="col m1">
+                          <i class="far fa-trash-alt primary-color"></i>
+                        </div>
+                        <div class="col m10">
+                          <span class="title contact-name secondary-text" v-on:click="contactClicked">{{contact.contactName}}</span>
+                          <a href="#"><p v-on:click="setMapLocation">{{contact.streetAddress}} {{contact.street2}}, {{contact.city}}, {{contact.zip}}</p></a>
+                        </div>
+                      </div>
                     </li>
                     <span class="divider"></span>
                   </div>
@@ -96,15 +106,25 @@
                 <textarea v-model="newDocument.content" class="create-document-textarea" placeholder="Document content">
 
                 </textarea>
-                <button v-on:click="addNewDocument" class="btn" type="submit" name="button">Add Document Template</button>
+                <button v-on:click="addNewDocument" class="btn z-depth-0" type="submit" name="button">Add Document Template</button>
               </div>
               <div class="col m4">
                 <h5 class="secondary-text">My Documents</h5>
                 <ul class="collection contact-document-list">
                   <div class="" v-for="document in loadedDocuments">
                     <li class="collection-item" v-on:click="contactClicked">
-                      <span class="title contact-name">{{document.title}}</span>
-                      <p>{{document.content.slice(0,50) + '...'}}</p>
+                      <div class="row">
+                        <div class="col m1">
+                          <i class="far fa-edit primary-color"></i>
+                        </div>
+                        <div class="col m1">
+                          <i class="far fa-trash-alt primary-color"></i>
+                        </div>
+                        <div class="col m10">
+                          <span class="title contact-name">{{document.title}}</span>
+                          <p>{{document.content.slice(0,50) + '...'}}</p>
+                        </div>
+                      </div>
                     </li>
                     <span class="divider"></span>
                   </div>

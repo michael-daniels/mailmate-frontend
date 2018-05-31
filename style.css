@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 nav {
-  background-color: #F9F9F9;
+  background-color: #F7F7F7;
   text-align: center;
 }
 body {
@@ -45,6 +45,14 @@ hr {
   color:#2196F3;
   margin-right: 0;
 }
+.fa-edit {
+  font-size: 25px;
+}
+.fa-trash-alt {
+  font-size: 25px;
+}
+
+
 .wrapper {
   text-align: center;
 }
