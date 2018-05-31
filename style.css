@@ -21,6 +21,7 @@ hr {
   border: 2px #2196F3 solid;
   border-radius: 5px;
   min-height:40px;
+  color:#2196F3;
 }
 .btn:hover {
   background-color: #2196F3;
@@ -52,6 +53,7 @@ hr {
   border-radius: 5px;
   margin:0 25px;
   min-height: 90vh;
+  margin-bottom:30px;
 }
 .tabs {
   width: 100%;
@@ -112,4 +114,11 @@ hr {
 .tab-active {
   background-color: #2196F3;
   color:white;
+}
+footer {
+  height:60px;
+  background-color: #2196F3;
+  padding:20px 30px;
+  color:white;
+  font-size: 17px;
 }
