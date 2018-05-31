@@ -13,6 +13,7 @@
     <!-- Compiled and minified JavaScript -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
   </head>
 
@@ -20,14 +21,23 @@
     <div id="app">
       <div class="wrapper">
         <nav>
-          <div class="logo text-icons">mailmate</div>
+          <span class="far fa-envelope"></span><span class="logo primary-color">mailmate</span>
         </nav>
-
-        <form class="" action="http://localhost:8000/login" method="post">
+        LOGIN
+        <form class="login-form" action="http://localhost:8000/login" method="post">
           <input type="text" name="username" value="" placeholder="Username"/>
           <input type="password" name="password" value="" placeholder="Password"/>
           <button class="btn" type="submit" name="button">Login</button>
         </form>
+
+        REGISTER
+        <form class="register-form" action="http://localhost:8000/register" method="post">
+          <input type="text" name="username" value="" placeholder="Username"/>
+          <input type="password" name="password" value="" placeholder="Password"/>
+          <button class="btn" type="submit" name="button">register</button>
+        </form>
+
+        ...or register here
       </div>
     </div>
   </body>
