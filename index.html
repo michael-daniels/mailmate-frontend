@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mailmate | Mailing Automation</title>
 
-    <!-- Bootstrap CSS -->
-    <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
+    <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Local stylesheet-->
     <link rel="stylesheet" href="./style.css">
   </head>
 
@@ -80,7 +79,7 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <i class="far fa-edit primary-color"></i>
+                          <div v-on:click="toggleContactModal"><i class="far fa-edit primary-color"></i></div>
                         </div>
                         <div class="col m1">
                           <i class="far fa-trash-alt primary-color" v-on:click="deleteContact"><span style="display:none">{{contact.id}}</span></i>
@@ -124,7 +123,7 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <i class="far fa-edit primary-color"></i>
+                          <i v-on:click="toggleDocumentModal" class="far fa-edit primary-color"></i>
                         </div>
                         <div class="col m1">
                           <i v-on:click="deleteDocument" class="far fa-trash-alt primary-color"><span style="display:none">{{document.id}}</span></i>
@@ -153,10 +152,38 @@
 
       </div>
     </div>
+    <!--Contacts modal-->
+      <!-- The Modal -->
+      <div id="contactModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Contacts Modal: Next step is to make this dynamic..</p>
+        </div>
+
+      </div>
+      <!--end modal-->
+
+      <!--Documents modal-->
+        <!-- The Modal -->
+        <div id="documentModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Document Modal: Next step is to make this dynamic..</p>
+          </div>
+
+        </div>
+        <!--end modal-->
   </body>
   <footer>
     Copyright 2018, Mailmate Ⓒ
   </footer>
+
+  <!-- Compiled and minified Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
   <!-- pull in vue.js -->
   <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
