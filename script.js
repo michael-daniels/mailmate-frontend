@@ -1,3 +1,4 @@
+
 let storedToken = localStorage.getItem('token')
 if (storedToken === null) {
   let token = window.location.href.indexOf('user_token=')
@@ -5,6 +6,9 @@ if (storedToken === null) {
   localStorage.setItem('token', token)
   console.log('stored token')
 }
+// if (!storedToken) {
+//   window.location.href = 'http://localhost:3000/loginregister.html'
+// }
 
 document.getElementById('tab1').style.display = 'block'
   var app = new Vue({

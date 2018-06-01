@@ -130,3 +130,27 @@ footer {
   color:white;
   font-size: 17px;
 }
+.document-grid-single {
+  resize: none;
+  padding: 30px 25px;
+  font-size: 8px;
+  margin:40px 40px;
+  width: 2.125in;
+  height:2.75in;
+  box-shadow: 4px 4px 10px 1px silver;
+  background-color: white;
+  float:left;
+  display: block;
+  border-radius:4px;
+  border:#f2f2f2;
+}
+.document-grid-single:hover {
+  border: 3px #2196F3 solid;
+  cursor: pointer;
+}
+.document-carousel {
+  background-color: #F8F8F8;
+  padding:0px 25px;
+  height: 350px;
+  overflow: scroll;
+}

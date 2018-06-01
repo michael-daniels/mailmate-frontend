@@ -74,7 +74,7 @@
                 </form>
               </div>
               <div class="col m6">
-                <h5 class="secondary-text">My Contacts</h5>
+                <h5 class="secondary-text">My Contacts ({{loadedContacts.length}})</h5>
                 <ul class="collection contact-document-list">
                   <div class="" v-for="contact in loadedContacts">
                     <li class="collection-item">
@@ -99,6 +99,15 @@
             </div>
           </div>
           <div id="tab2" class="tab-2 tab-view">
+
+            <div class="document-carousel">
+                <div v-for="document in loadedDocuments">
+                    <textarea class="document-grid-single" name="name" readonly>{{document.content}}</textarea>
+                </div>
+            </div>
+
+
+
             <div class="row">
               <div class="col m7">
                 <h5 class="secondary-text">Create Document</h5>
@@ -109,7 +118,7 @@
                 <button v-on:click="addNewDocument" class="btn z-depth-0" type="submit" name="button">Add Document Template</button>
               </div>
               <div class="col m5">
-                <h5 class="secondary-text">My Documents</h5>
+                <h5 class="secondary-text">My Documents ({{loadedDocuments.length}})</h5>
                 <ul class="collection contact-document-list">
                   <div class="" v-for="document in loadedDocuments">
                     <li class="collection-item" v-on:click="contactClicked">
@@ -153,5 +162,5 @@
   <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
 
   <!-- insert model.js -->
-  <script src="./model.js"></script>
+  <script src="./script.js"></script>
 </html>
