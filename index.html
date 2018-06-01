@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vue.JS Tutorial</title>
+    <title>Mailmate | Mailing Automation</title>
 
     <!-- Bootstrap CSS -->
     <!-- Compiled and minified CSS -->
@@ -83,7 +83,7 @@
                           <i class="far fa-edit primary-color"></i>
                         </div>
                         <div class="col m1">
-                          <i class="far fa-trash-alt primary-color"></i>
+                          <i class="far fa-trash-alt primary-color" v-on:click="deleteContact"><span style="display:none">{{contact.id}}</span></i>
                         </div>
                         <div class="col m10">
                           <span class="title contact-name secondary-text" v-on:click="contactClicked">{{contact.contactName}}</span>
@@ -121,16 +121,16 @@
                 <h5 class="secondary-text">My Documents ({{loadedDocuments.length}})</h5>
                 <ul class="collection contact-document-list">
                   <div class="" v-for="document in loadedDocuments">
-                    <li class="collection-item" v-on:click="contactClicked">
+                    <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
                           <i class="far fa-edit primary-color"></i>
                         </div>
                         <div class="col m1">
-                          <i class="far fa-trash-alt primary-color"></i>
+                          <i v-on:click="deleteDocument" class="far fa-trash-alt primary-color"><span style="display:none">{{document.id}}</span></i>
                         </div>
                         <div class="col m10">
-                          <span class="title contact-name">{{document.title}}</span>
+                          <span class="title document-name" v-on:click="documentClicked">{{document.title}}</span>
                           <p>{{document.content.slice(0,50) + '...'}}</p>
                         </div>
                       </div>

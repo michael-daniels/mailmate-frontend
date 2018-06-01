@@ -122,7 +122,47 @@ document.getElementById('tab1').style.display = 'block'
           content:''
         }
       },
+      deleteContact: (event) => {
+        let contactID = Number(event.target.firstElementChild.innerHTML)
+        console.log(contactID)
+
+        app.loadedContacts = app.loadedContacts.filter((item) => {
+          return item.id !== contactID
+        })
+
+        fetch(`http://localhost:8000/delete_contact/${contactID}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        })
+          .then((response) => {
+            console.log(response)
+          })
+      },
+      deleteDocument: (event) => {
+        let documentID = Number(event.target.firstElementChild.innerHTML)
+
+        app.loadedDocuments = app.loadedDocuments.filter((item) => {
+          return item.id !== documentID
+        })
+
+        fetch(`http://localhost:8000/delete_document/${documentID}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        })
+          .then((response) => {
+            console.log(response)
+          })
+      },
       contactClicked: (event) => {
+        alert(event.target.class)
+      },
+      documentClicked: (event) => {
         alert(event.target.class)
       },
       setMapLocation: (event) => {

@@ -103,6 +103,15 @@ hr {
 .contact-name {
   font-size: 20px;
 }
+.contact-name:hover {
+  cursor:pointer;
+}
+.document-name {
+  font-size: 20px;
+}
+.document-name:hover {
+  cursor:pointer;
+}
 .upload-contact-form {
   max-width: 90%
 }
