@@ -79,7 +79,7 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <div v-on:click="toggleContactModal"><i class="far fa-edit primary-color"></i></div>
+                          <div v-on:click="toggleContactModal"><i class="far fa-edit primary-color"><span style="display:none">{{contact.id}}</span></i></div>
                         </div>
                         <div class="col m1">
                           <i class="far fa-trash-alt primary-color" v-on:click="deleteContact"><span style="display:none">{{contact.id}}</span></i>
@@ -123,7 +123,7 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <i v-on:click="toggleDocumentModal" class="far fa-edit primary-color"></i>
+                          <i v-on:click="toggleDocumentModal" class="far fa-edit primary-color"><span style="display:none">{{document.id}}</span></i>
                         </div>
                         <div class="col m1">
                           <i v-on:click="deleteDocument" class="far fa-trash-alt primary-color"><span style="display:none">{{document.id}}</span></i>
@@ -151,32 +151,51 @@
         </div>
 
       </div>
-    </div>
-    <!--Contacts modal-->
-      <!-- The Modal -->
-      <div id="contactModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Contacts Modal: Next step is to make this dynamic..</p>
-        </div>
-
-      </div>
-      <!--end modal-->
-
-      <!--Documents modal-->
+      <!--Contacts modal-->
         <!-- The Modal -->
-        <div id="documentModal" class="modal">
+        <div id="contactModal" class="modal">
 
           <!-- Modal content -->
           <div class="modal-content">
+            <h5 class="primary-color">Edit Contact</h5>
             <span class="close">&times;</span>
-            <p>Document Modal: Next step is to make this dynamic..</p>
+            <form class="upload-contact-form" method="post">
+              <input type="" name="editContactID" v-bind:value="editContactModal.id">
+              <input  type="text" class="input-field" name="name" v-bind:value="editContactModal.contactName">
+              <input  type="text" class="input-field" name="street" v-bind:value="editContactModal.streetAddress">
+              <input  type="text" class="input-field" name="street2" v-bind:value="editContactModal.street2" placeholder="Street 2">
+              <input  type="text" class="input-field" name="city" v-bind:value="editContactModal.city">
+              <input  type="text" class="input-field" name="state" v-bind:value="editContactModal.state">
+              <input  type="text" class="input-field" name="zip" v-bind:value="editContactModal.zip">
+              <button v-on:click="" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+            </form>
+
           </div>
 
         </div>
         <!--end modal-->
+
+        <!--Documents modal-->
+          <!-- The Modal -->
+          <div id="documentModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <h5 class="primary-color">Edit Document</h5>
+              <span class="close">&times;</span>
+              <form class="" action="index.html" method="post">
+                <input type="" name="" v-bind:value="editDocumentModal.id">
+                <input type="text" name="" v-bind:value="editDocumentModal.title" />
+                <textarea class="edit-document-textarea" name="name" rows="8" cols="80" v-bind:value="editDocumentModal.content"></textarea>
+                <button class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+              </form>
+
+            </div>
+
+          </div>
+          <!--end modal-->
+    </div>
+
   </body>
   <footer>
     Copyright 2018, Mailmate Ⓒ

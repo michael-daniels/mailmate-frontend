@@ -34,7 +34,19 @@ document.getElementById('tab1').style.display = 'block'
         title:'',
         content:'',
       },
-      currentMapLocation:'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=United+States'
+      currentMapLocation:'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=United+States',
+      editContactModal : {
+        contactName: '',
+        streetAddress: '',
+        street2: '',
+        city: '',
+        state: '',
+        zip: '',
+      },
+      editDocumentModal : {
+        title:'',
+        content:''
+      },
     },
     methods: {
       showTab: (event) => {
@@ -169,6 +181,13 @@ document.getElementById('tab1').style.display = 'block'
         app.currentMapLocation = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=' + event.target.innerHTML
       },
       toggleContactModal: (event) => {
+        let contactID = Number(event.target.firstElementChild.innerHTML)
+
+        app.editContactModal = app.loadedContacts.filter((item) => {
+          return item.id === contactID
+        })[0]
+        console.log('editContactModal', app.editContactModal)
+
         let modal = document.getElementById('contactModal');
         // Get the <span> element that closes the modal
         let span = document.getElementsByClassName("close")[0];
@@ -187,6 +206,13 @@ document.getElementById('tab1').style.display = 'block'
         }
       },
       toggleDocumentModal: (event) => {
+        let documentID = Number(event.target.firstElementChild.innerHTML)
+
+        app.editDocumentModal = app.loadedDocuments.filter((item) => {
+          return item.id === documentID
+        })[0]
+        console.log('editDocumentModal', app.editDocumentModal.title)
+
         let modal = document.getElementById('documentModal');
         // Get the <span> element that closes the modal
         let span = document.getElementsByClassName("close")[0];

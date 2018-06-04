@@ -48,8 +48,14 @@ hr {
 .fa-edit {
   font-size: 20px;
 }
+.fa-edit:hover {
+  cursor:pointer;
+}
 .fa-trash-alt {
   font-size: 20px;
+}
+.fa-trash-alt:hover {
+  cursor:pointer;
 }
 
 
@@ -172,7 +178,7 @@ footer {
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100vh; /* Full height */
+    height: 150%; /* Full height */
 
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -185,6 +191,7 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 40%; /* Could be more or less, depending on screen size */
+    border-radius:5px;
 }
 
 /* The Close Button */
@@ -197,7 +204,11 @@ footer {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #2196F3;
     text-decoration: none;
     cursor: pointer;
+}
+.edit-document-textarea {
+  height: 200px;
+  padding:25px 25px;
 }
