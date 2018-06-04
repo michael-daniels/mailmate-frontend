@@ -215,7 +215,7 @@ document.getElementById('tab1').style.display = 'block'
 
         let modal = document.getElementById('documentModal');
         // Get the <span> element that closes the modal
-        let span = document.getElementsByClassName("close")[0];
+        let span = document.getElementsByClassName("close")[1];
         // When the user clicks on the button, open the modal
         modal.style.display = "block";
 
