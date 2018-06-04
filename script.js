@@ -181,6 +181,8 @@ document.getElementById('tab1').style.display = 'block'
         app.currentMapLocation = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyComtCTHcgK-Hn-t4e_idADPWJgWpI4G4E&q=' + event.target.innerHTML
       },
       toggleContactModal: (event) => {
+        document.getElementById('contactModalContent').classList.add('flipInY')
+
         let contactID = Number(event.target.firstElementChild.innerHTML)
 
         app.editContactModal = app.loadedContacts.filter((item) => {
@@ -206,6 +208,8 @@ document.getElementById('tab1').style.display = 'block'
         }
       },
       toggleDocumentModal: (event) => {
+        document.getElementById('documentModalContent').classList.add('flipInY')
+
         let documentID = Number(event.target.firstElementChild.innerHTML)
 
         app.editDocumentModal = app.loadedDocuments.filter((item) => {

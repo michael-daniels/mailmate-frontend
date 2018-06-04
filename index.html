@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <!--Local stylesheet-->
     <link rel="stylesheet" href="./style.css">
   </head>
@@ -21,7 +24,7 @@
       <div class="wrapper">
 
         <nav>
-          <span class="far fa-envelope"></span><span class="logo primary-color">mailmate</span>
+          <span class="far fa-envelope"></span><span class="logo primary-color animated-bounce">mailmate</span>
         </nav>
 
         <div class="row">
@@ -153,10 +156,10 @@
       </div>
       <!--Contacts modal-->
         <!-- The Modal -->
-        <div id="contactModal" class="modal">
+        <div id="contactModal" class="modal animated">
 
           <!-- Modal content -->
-          <div class="modal-content">
+          <div id="contactModalContent" class="modal-content animated">
             <span class="close">&times;</span>
             <h5 class="primary-color">Edit Contact</h5>
             <form class="upload-contact-form" method="post">
@@ -176,10 +179,10 @@
 
         <!--Documents modal-->
           <!-- The Modal -->
-          <div id="documentModal" class="modal">
+          <div id="documentModal" class="modal animated">
 
             <!-- Modal content -->
-            <div class="modal-content">
+            <div id="documentModalContent" class="modal-content animated">
               <span class="close">&times;</span>
               <h5 class="primary-color">Edit Document</h5>
               <form class="" action="index.html" method="post">
