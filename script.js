@@ -230,6 +230,34 @@ document.getElementById('tab1').style.display = 'block'
             }
         }
       },
+      editContact: (event) => {
+        event.preventDefault()
+        fetch(`http://localhost:8000/edit_contact/${app.editContactModal.id}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(app.editContactModal)
+        })
+          .then((response) => {
+            console.log(response)
+          })
+      },
+      editDocument: (event) => {
+        event.preventDefault()
+        fetch(`http://localhost:8000/edit_document/${app.editDocumentModal.id}`, {
+          method: 'post',
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(app.editDocumentModal)
+        })
+          .then((response) => {
+            console.log(response)
+          })
+      },
     }
   })
   app.loadAllContacts()

@@ -129,7 +129,7 @@
                           <i v-on:click="deleteDocument" class="far fa-trash-alt primary-color"><span style="display:none">{{document.id}}</span></i>
                         </div>
                         <div class="col m10">
-                          <span class="title document-name" v-on:click="documentClicked">{{document.title}}</span>
+                          <span class="title document-name secondary-text" v-on:click="documentClicked">{{document.title}}</span>
                           <p>{{document.content.slice(0,50) + '...'}}</p>
                         </div>
                       </div>
@@ -160,14 +160,13 @@
             <h5 class="primary-color">Edit Contact</h5>
             <span class="close">&times;</span>
             <form class="upload-contact-form" method="post">
-              <input type="" name="editContactID" v-bind:value="editContactModal.id">
-              <input  type="text" class="input-field" name="name" v-bind:value="editContactModal.contactName">
-              <input  type="text" class="input-field" name="street" v-bind:value="editContactModal.streetAddress">
-              <input  type="text" class="input-field" name="street2" v-bind:value="editContactModal.street2" placeholder="Street 2">
-              <input  type="text" class="input-field" name="city" v-bind:value="editContactModal.city">
-              <input  type="text" class="input-field" name="state" v-bind:value="editContactModal.state">
-              <input  type="text" class="input-field" name="zip" v-bind:value="editContactModal.zip">
-              <button v-on:click="" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+              <input  type="text" class="input-field" name="name" v-model:value="editContactModal.contactName" />
+              <input  type="text" class="input-field" name="street" v-model:value="editContactModal.streetAddress" />
+              <input  type="text" class="input-field" name="street2" v-model:value="editContactModal.street2" placeholder="Street 2" />
+              <input  type="text" class="input-field" name="city" v-model:value="editContactModal.city" />
+              <input  type="text" class="input-field" name="state" v-model:value="editContactModal.state" />
+              <input  type="text" class="input-field" name="zip" v-model:value="editContactModal.zip" />
+              <button v-on:click="editContact" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
             </form>
 
           </div>
@@ -184,10 +183,9 @@
               <h5 class="primary-color">Edit Document</h5>
               <span class="close">&times;</span>
               <form class="" action="index.html" method="post">
-                <input type="" name="" v-bind:value="editDocumentModal.id">
-                <input type="text" name="" v-bind:value="editDocumentModal.title" />
-                <textarea class="edit-document-textarea" name="name" rows="8" cols="80" v-bind:value="editDocumentModal.content"></textarea>
-                <button class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+                <input type="text" name="" v-model:value="editDocumentModal.title" />
+                <textarea class="edit-document-textarea" name="name" rows="8" cols="80" v-model:value="editDocumentModal.content"></textarea>
+                <button v-on:click="editDocument" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
               </form>
 
             </div>
