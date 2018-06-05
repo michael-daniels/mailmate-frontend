@@ -204,7 +204,8 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <i v-on:click="selectContacts" class="far fa-plus-square primary-color"><span style="display:none">{{contact.id}}</span></i>
+                          <i v-on:click="removeSelectedContact" class="far fa-minus-square primary-color"><span style="display:none">{{contact.id}}</span></i>
+                          <!--i v-on:click="selectContacts" class="far fa-plus-square primary-color"><span style="display:none">{{contact.id}}</span></i-->
                         </div>
                         <div class="col m1">
                           <div v-on:click="toggleContactModal"><i class="far fa-edit primary-color"><span style="display:none">{{contact.id}}</span></i></div>

@@ -67,7 +67,9 @@ hr {
 .fa-plus-square {
   font-size: 22px;
 }
-
+.fa-minus-square {
+  font-size: 22px;
+}
 .wrapper {
   text-align: center;
 }

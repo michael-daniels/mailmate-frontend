@@ -268,6 +268,13 @@ document.getElementById('tab1').style.display = 'block'
         }
 
       },
+      removeSelectedContact: (event) => {
+        let contactID = Number(event.target.firstElementChild.innerHTML)
+
+        app.selectedContacts = app.selectedContacts.filter((item) => {
+          return item.id !== contactID
+        })
+      },
       selectDocument: (event) => {
         let documentID = Number(event.target.firstElementChild.innerHTML)
 
