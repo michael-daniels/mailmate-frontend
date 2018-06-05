@@ -57,7 +57,9 @@ hr {
 .fa-trash-alt:hover {
   cursor:pointer;
 }
-
+.fa-plus-square {
+  font-size: 22px;
+}
 
 .wrapper {
   text-align: center;
@@ -106,6 +108,16 @@ hr {
   overflow-y: scroll;
   height:370px;
 }
+.collection-recipients-mail {
+  text-align:left;
+  overflow-y: scroll;
+  height:600px;
+}
+.collection-documents-mail {
+  text-align:left;
+  overflow-y: scroll;
+  height:120px;
+}
 .contact-name {
   font-size: 20px;
 }
@@ -144,6 +156,20 @@ footer {
   padding:20px 30px;
   color:white;
   font-size: 17px;
+}
+.document-mail-single {
+  resize: none;
+  padding: 40px 50px;
+  font-size: 12px;
+  margin:0px 0px;
+  width: 4.45in;
+  height: 4.80in;
+  box-shadow: 4px 4px 10px 1px silver;
+  background-color: white;
+  float:left;
+  display: block;
+  border-radius:4px;
+  border:#f2f2f2;
 }
 .document-grid-single {
   resize: none;
