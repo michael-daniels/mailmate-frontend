@@ -52,13 +52,11 @@ document.getElementById('tab1').style.display = 'block'
       showTab: (event) => {
         let allTabs = document.querySelectorAll('.tab-view')
         let allTabButtons = document.querySelectorAll('.single-tab')
-        console.log('TAB BUTTONS', allTabButtons)
         for (let i = 0; i < allTabs.length; i++) {
           allTabs[i].style.display = 'none'
           allTabButtons[i].classList.remove('tab-active')
         }
         event.target.classList.add('tab-active')
-        console.log(event.target.classList.value)
         document.getElementById(`tab${event.target.id}`).style.display = 'block'
       },
       loadAllContacts: () => {
@@ -67,7 +65,6 @@ document.getElementById('tab1').style.display = 'block'
             return response.json()
           })
           .then((data) => {
-            console.log('DATA', data)
             app.loadedContacts = data
           })
           .catch((err) => {
@@ -80,7 +77,6 @@ document.getElementById('tab1').style.display = 'block'
             return response.json()
           })
           .then((data) => {
-            console.log('DOCUMENT DATA', data)
             app.loadedDocuments = data
           })
           .catch((err) => {
@@ -136,7 +132,6 @@ document.getElementById('tab1').style.display = 'block'
       },
       deleteContact: (event) => {
         let contactID = Number(event.target.firstElementChild.innerHTML)
-        console.log(contactID)
 
         app.loadedContacts = app.loadedContacts.filter((item) => {
           return item.id !== contactID
@@ -186,7 +181,6 @@ document.getElementById('tab1').style.display = 'block'
         app.editContactModal = app.loadedContacts.filter((item) => {
           return item.id === contactID
         })[0]
-        console.log('editContactModal', app.editContactModal)
 
         let modal = document.getElementById('contactModal');
         // Get the <span> element that closes the modal
@@ -211,7 +205,6 @@ document.getElementById('tab1').style.display = 'block'
         app.editDocumentModal = app.loadedDocuments.filter((item) => {
           return item.id === documentID
         })[0]
-        console.log('editDocumentModal', app.editDocumentModal.title)
 
         let modal = document.getElementById('documentModal');
         // Get the <span> element that closes the modal
@@ -259,18 +252,21 @@ document.getElementById('tab1').style.display = 'block'
           })
       },
       selectContacts: (event) => {
-        // event.preventDefault()
-        // fetch(`http://localhost:8000/edit_document/${app.editDocumentModal.id}`, {
-        //   method: 'post',
-        //   headers:{
-        //     'Accept': 'application/json',
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify(app.editDocumentModal)
-        // })
-        //   .then((response) => {
-        //     console.log(response)
-        //   })
+        let contactID = Number(event.target.firstElementChild.innerHTML)
+        let contactAlreadySelected = false
+
+        for (let i = 0; i < app.selectedContacts.length; i++) {
+          if (app.selectedContacts[i].id === contactID) {
+            contactAlreadySelected = true
+          }
+        }
+
+        if (contactAlreadySelected === false) {
+          app.selectedContacts.push(app.loadedContacts.filter((item) => {
+            return item.id === contactID
+          })[0])
+        }
+
       },
       selectDocument: (event) => {
         let documentID = Number(event.target.firstElementChild.innerHTML)
@@ -278,18 +274,6 @@ document.getElementById('tab1').style.display = 'block'
         app.selectedDocument = app.loadedDocuments.filter((item) => {
           return item.id === documentID
         })[0]
-        console.log('selectedDocument', app.selectedDocument)
-        // fetch(`http://localhost:8000/edit_document/${app.editDocumentModal.id}`, {
-        //   method: 'post',
-        //   headers:{
-        //     'Accept': 'application/json',
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify(app.editDocumentModal)
-        // })
-        //   .then((response) => {
-        //     console.log(response)
-        //   })
       },
     }
   })
