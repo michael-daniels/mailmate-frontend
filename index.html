@@ -147,7 +147,7 @@
           <div id="tab3" class="tab-3 tab-view">
             <div class="row">
               <div class="col m4">
-                <h5 class="secondary-text">Recipient(s)</h5>
+                <h5 class="secondary-text">Select Recipient(s)</h5>
                 <ul class="collection contact-document-list collection-recipients-mail">
                   <div class="" v-for="contact in loadedContacts">
                     <li class="collection-item">
@@ -170,7 +170,7 @@
                 </ul>
               </div>
               <div class="col m4">
-                <h5 class="secondary-text">Document</h5>
+                <h5 class="secondary-text">Select Document</h5>
                 <ul class="collection contact-document-list collection-documents-mail">
                   <div class="" v-for="document in loadedDocuments">
                     <li class="collection-item">
@@ -198,7 +198,27 @@
 
               </div>
               <div class="col m4">
-                <h5 class="secondary-text">Send</h5>
+                <h5 class="secondary-text">Review & Send</h5>
+                <ul class="collection contact-document-list">
+                  <div class="" v-for="contact in selectedContacts">
+                    <li class="collection-item">
+                      <div class="row">
+                        <div class="col m1">
+                          <i v-on:click="selectContacts" class="far fa-plus-square primary-color"><span style="display:none">{{contact.id}}</span></i>
+                        </div>
+                        <div class="col m1">
+                          <div v-on:click="toggleContactModal"><i class="far fa-edit primary-color"><span style="display:none">{{contact.id}}</span></i></div>
+                        </div>
+                        <div class="col m10">
+                          <span class="title contact-name secondary-text" v-on:click="contactClicked">{{contact.contactName}}</span>
+                          <a href="#"><p v-on:click="setMapLocation">{{contact.streetAddress}} {{contact.street2}}, {{contact.city}}, {{contact.zip}}</p></a>
+                        </div>
+                      </div>
+                    </li>
+                    <span class="divider"></span>
+                  </div>
+
+                </ul>
                 <button class="btn z-depth-0 send-mail-button" type="button" name="button"><i class="far fa-paper-plane"></i> Send Mail</button>
               </div>
             </div>
