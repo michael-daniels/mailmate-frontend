@@ -10,6 +10,15 @@ body {
 button {
   width:90%;
 }
+.send-mail-button {
+  height:180px;
+  font-size: 30px;
+}
+.fa-paper-plane {
+  font-size: 40px;
+}
+
+
 hr {
   height:1px
 }

@@ -28,7 +28,7 @@ document.getElementById('tab1').style.display = 'block'
         title:'',
         content:''
       },
-      selectedContacts: ['all selected contacts populated here, multiple objects'],
+      selectedContacts: [],
       selectedDocument: {
         id:'',
         title:'',
@@ -257,6 +257,39 @@ document.getElementById('tab1').style.display = 'block'
           .then((response) => {
             console.log(response)
           })
+      },
+      selectContacts: (event) => {
+        // event.preventDefault()
+        // fetch(`http://localhost:8000/edit_document/${app.editDocumentModal.id}`, {
+        //   method: 'post',
+        //   headers:{
+        //     'Accept': 'application/json',
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify(app.editDocumentModal)
+        // })
+        //   .then((response) => {
+        //     console.log(response)
+        //   })
+      },
+      selectDocument: (event) => {
+        let documentID = Number(event.target.firstElementChild.innerHTML)
+
+        app.selectedDocument = app.loadedDocuments.filter((item) => {
+          return item.id === documentID
+        })[0]
+        console.log('selectedDocument', app.selectedDocument)
+        // fetch(`http://localhost:8000/edit_document/${app.editDocumentModal.id}`, {
+        //   method: 'post',
+        //   headers:{
+        //     'Accept': 'application/json',
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify(app.editDocumentModal)
+        // })
+        //   .then((response) => {
+        //     console.log(response)
+        //   })
       },
     }
   })

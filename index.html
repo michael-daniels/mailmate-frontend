@@ -176,10 +176,10 @@
                     <li class="collection-item">
                       <div class="row">
                         <div class="col m1">
-                          <i v-on:click="toggleDocumentModal" class="far fa-edit primary-color"><span style="display:none">{{document.id}}</span></i>
+                          <i v-on:click="selectDocument" class="far fa-plus-square primary-color"><span style="display:none">{{document.id}}</span></i>
                         </div>
                         <div class="col m1">
-                          <i v-on:click="deleteDocument" class="far fa-trash-alt primary-color"><span style="display:none">{{document.id}}</span></i>
+                          <i v-on:click="toggleDocumentModal" class="far fa-edit primary-color"><span style="display:none">{{document.id}}</span></i>
                         </div>
                         <div class="col m10">
                           <span class="title document-name secondary-text" v-on:click="documentClicked">{{document.title}}</span>
@@ -192,13 +192,14 @@
 
                 </ul>
 
-                <textarea class="document-mail-single" name="name" rows="8" cols="80">
+                <textarea class="document-mail-single" name="name" rows="8" cols="80" v-model:value="selectedDocument.content">
 
                 </textarea>
 
               </div>
               <div class="col m4">
                 <h5 class="secondary-text">Send</h5>
+                <button class="btn z-depth-0 send-mail-button" type="button" name="button"><i class="far fa-paper-plane"></i> Send Mail</button>
               </div>
             </div>
           </div>
