@@ -284,17 +284,17 @@ document.getElementById('tab1').style.display = 'block'
       },
       sendMail: (event) => {
         event.preventDefault()
-        fetch('http://localhost:8000/send_mail', {
-          method: 'post',
-          headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify([app.selectedDocument, app.selectedContacts])
-        })
-          .then((response) => {
-            console.log(response)
+          fetch('http://localhost:8000/send_mail', {
+            method: 'post',
+            headers:{
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify([app.selectedDocument, app.selectedContacts])
           })
+            .then((response) => {
+              console.log(response)
+            })
       },
     }
   })

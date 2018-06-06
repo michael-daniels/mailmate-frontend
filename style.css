@@ -11,7 +11,8 @@ button {
   width:90%;
 }
 .send-mail-button {
-  height:180px;
+  height:80px;
+  min-width: 100%;
   font-size: 30px;
 }
 .fa-paper-plane {
