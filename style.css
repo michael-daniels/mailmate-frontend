@@ -156,6 +156,10 @@ hr {
 .contact-document-list {
   margin-top:30px;
 }
+.review-send-list {
+  margin-top:30px;
+  height: 500px;
+}
 .tab-active {
   background-color: #2196F3;
   color:white;
