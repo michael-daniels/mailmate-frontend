@@ -49,6 +49,7 @@ document.getElementById('tab1').style.display = 'block'
         title:'',
         content:''
       },
+      createdDocumentURL:'',
     },
     methods: {
       showTab: (event) => {
@@ -309,6 +310,13 @@ document.getElementById('tab1').style.display = 'block'
             .then((response) => {
               console.log(response)
             })
+      },
+      getCreatedDocumentURL: (event) => {
+        event.preventDefault()
+        let documentURL = event.target.firstElementChild.innerHTML.replace(/amp;/g, '')
+        console.log('documentURL', documentURL)
+        app.createdDocumentURL = documentURL
+        //alert(app.createdDocumentURL)
       },
     }
   })

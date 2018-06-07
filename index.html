@@ -225,7 +225,54 @@
             </div>
           </div>
           <div id="tab4" class="tab-4 tab-view">
-            Tab 4
+            <div class="row">
+              <div class="col m2">
+                Recipient
+              </div>
+              <div class="col m2">
+                Document
+              </div>
+              <div class="col m2">
+                Carrier
+              </div>
+              <div class="col m2">
+                Tracking Number
+              </div>
+              <div class="col m2">
+                Date Created
+              </div>
+              <div class="col m2">
+                Expected Delivery Date
+              </div>
+            </div>
+            <ul class="collection contact-document-list">
+              <div class="" v-for="item in loadedHistory">
+                <li class="collection-item">
+                  <div class="row">
+                    <div class="col m2">
+                      {{item.recipient_name}}
+                    </div>
+                    <div class="col m2">
+                      <a v-on:mouseover="getCreatedDocumentURL" target="_blank" v-bind:href="createdDocumentURL"><span style="display:none">{{item.img_url}}</span>View Document</a>
+                    </div>
+                    <div class="col m2">
+                      {{item.carrier}}
+                    </div>
+                    <div class="col m2">
+                      Pending
+                    </div>
+                    <div class="col m2">
+                      {{item.date_created}}
+                    </div>
+                    <div class="col m2">
+                      {{item.expected_delivery_date}}
+                    </div>
+                  </div>
+                </li>
+                <span class="divider"></span>
+              </div>
+
+            </ul>
           </div>
 
         </div>
