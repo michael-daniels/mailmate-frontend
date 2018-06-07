@@ -10,6 +10,15 @@ body {
 button {
   width:90%;
 }
+h5 {
+  font-family: Quicksand;
+}
+p {
+  color:gray;
+}
+a > p {
+  color:#8EC5F2;
+}
 .send-mail-button {
   height:80px;
   min-width: 100%;
@@ -80,6 +89,7 @@ hr {
   margin:0 25px;
   min-height: 90vh;
   margin-bottom:30px;
+  background-color: white;
 }
 .tabs {
   width: 100%;
@@ -99,12 +109,18 @@ hr {
   color: #BBDEFB;
 }
 .accent-color {
-  color:#009688;
+  color:#3ecf8e;
+}
+.warning-color {
+  color:#FF9A13;
 }
 .primary-text {
   color: #212121;
 }
 .secondary-text {
+  color: #8EC5F2;
+}
+.secondary-text2 {
   color: #757575;
 }
 .text-icons {

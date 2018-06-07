@@ -11,11 +11,13 @@ if (storedToken === null) {
 // }
 
 document.getElementById('tab1').style.display = 'block'
+
   var app = new Vue({
     el: '#app',
     data: {
       loadedContacts: [],
       loadedDocuments: [],
+      loadedHistory: [],
       newContact: {
         contactName: '',
         streetAddress: '',
@@ -78,6 +80,18 @@ document.getElementById('tab1').style.display = 'block'
           })
           .then((data) => {
             app.loadedDocuments = data
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      },
+      loadAllHistory: () => {
+        fetch(`http://localhost:8000/history?user_token=${localStorage.getItem('token')}`)
+          .then((response) => {
+            return response.json()
+          })
+          .then((data) => {
+            app.loadedHistory = data
           })
           .catch((err) => {
             console.log(err)
@@ -300,3 +314,4 @@ document.getElementById('tab1').style.display = 'block'
   })
   app.loadAllContacts()
   app.loadAllDocuments()
+  app.loadAllHistory()
