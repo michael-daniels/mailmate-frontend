@@ -299,17 +299,23 @@ document.getElementById('tab1').style.display = 'block'
       },
       sendMail: (event) => {
         event.preventDefault()
+        for (let i = 0; i < app.selectedContacts.length; i++) {
+          if (i > 3) {
+            alert('Current limit is 3 recipients')
+            break
+          }
           fetch('http://localhost:8000/send_mail', {
             method: 'post',
             headers:{
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify([app.selectedDocument, app.selectedContacts])
+            body: JSON.stringify([app.selectedDocument, app.selectedContacts[i]])
           })
             .then((response) => {
               console.log(response)
             })
+        }
       },
       getCreatedDocumentURL: (event) => {
         event.preventDefault()
@@ -318,6 +324,22 @@ document.getElementById('tab1').style.display = 'block'
         app.createdDocumentURL = documentURL
         //alert(app.createdDocumentURL)
       },
+    },
+    filters: {
+      capitalize: function (value) {
+        let valueArray = value.split(' ')
+
+        for (let i = 0; i < valueArray.length; i++) {
+          let firstLetter = valueArray[i][0].toUpperCase()
+          valueArray[i] = valueArray[i].toLowerCase().slice(1)
+          valueArray[i] = firstLetter + valueArray[i]
+        }
+        return valueArray.join(' ')
+      },
+      stripTimeHistory: function (value) {
+        let timeIndex = value.indexOf('T')
+        return value.slice(0, timeIndex)
+      }
     }
   })
   app.loadAllContacts()

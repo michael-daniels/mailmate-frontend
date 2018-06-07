@@ -269,3 +269,13 @@ footer {
   height: 200px;
   padding:25px 25px;
 }
+.history-row {
+  text-align: left
+}
+.history-header {
+  font-family: Quicksand;
+  font-size: 22px;
+}
+.history-item {
+  font-size: 16px;
+}

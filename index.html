@@ -225,46 +225,46 @@
             </div>
           </div>
           <div id="tab4" class="tab-4 tab-view">
-            <div class="row">
+            <div class="row history-row">
               <div class="col m2">
-                Recipient
+                <span class="history-header secondary-text">Recipient</span>
               </div>
               <div class="col m2">
-                Document
+                <span class="history-header secondary-text">Document</span>
               </div>
               <div class="col m2">
-                Carrier
+                <span class="history-header secondary-text">Carrier</span>
               </div>
               <div class="col m2">
-                Tracking Number
+                <span class="history-header secondary-text">Tracking Number</span>
               </div>
               <div class="col m2">
-                Date Created
+                <span class="history-header secondary-text">Created</span>
               </div>
               <div class="col m2">
-                Expected Delivery Date
+                <span class="history-header secondary-text">Exp. Delivery Date</span>
               </div>
             </div>
             <ul class="collection contact-document-list">
               <div class="" v-for="item in loadedHistory">
                 <li class="collection-item">
                   <div class="row">
-                    <div class="col m2">
-                      {{item.recipient_name}}
+                    <div class="col m2 secondary-text2 history-item">
+                      {{item.recipient_name | capitalize}}
                     </div>
-                    <div class="col m2">
+                    <div class="col m2 secondary-text2 history-item">
                       <a v-on:mouseover="getCreatedDocumentURL" target="_blank" v-bind:href="createdDocumentURL"><span style="display:none">{{item.img_url}}</span>View Document</a>
                     </div>
-                    <div class="col m2">
+                    <div class="col m2 secondary-text2 history-item">
                       {{item.carrier}}
                     </div>
-                    <div class="col m2">
+                    <div class="col m2 secondary-text2 history-item">
                       Pending
                     </div>
-                    <div class="col m2">
-                      {{item.date_created}}
+                    <div class="col m2 secondary-text2 history-item">
+                      {{item.date_created | stripTimeHistory}}
                     </div>
-                    <div class="col m2">
+                    <div class="col m2 secondary-text2 history-item">
                       {{item.expected_delivery_date}}
                     </div>
                   </div>
