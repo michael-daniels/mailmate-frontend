@@ -220,7 +220,7 @@
                   </div>
 
                 </ul>
-                <button v-on:click="sendMail" class="btn z-depth-0 send-mail-button" type="button" name="button"><i class="far fa-paper-plane"></i> Send Mail</button>
+                <button v-on:click="sendMail" class="btn z-depth-0 send-mail-button" type="button" name="button"><i class="far fa-paper-plane"></i>   Send Mail</button>
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@
               <input  type="text" class="input-field" name="city" v-model:value="editContactModal.city" />
               <input  type="text" class="input-field" name="state" v-model:value="editContactModal.state" />
               <input  type="text" class="input-field" name="zip" v-model:value="editContactModal.zip" />
-              <button v-on:click="editContact" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+              <button v-on:click="editContact" class="btn z-depth-0 modal-btn" type="submit" name="button">Submit Edit</button>
             </form>
 
           </div>
@@ -312,7 +312,7 @@
               <form class="" action="index.html" method="post">
                 <input type="text" name="" v-model:value="editDocumentModal.title" />
                 <textarea class="edit-document-textarea" name="name" rows="8" cols="80" v-model:value="editDocumentModal.content"></textarea>
-                <button v-on:click="editDocument" class="btn z-depth-0" type="submit" name="button">Submit Edit</button>
+                <button v-on:click="editDocument" class="btn z-depth-0 modal-btn" type="submit" name="button">Submit Edit</button>
               </form>
 
             </div>

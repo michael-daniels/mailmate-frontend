@@ -100,7 +100,7 @@ document.getElementById('tab1').style.display = 'block'
       },
       addNewContact: (event) => {
         event.preventDefault()
-        app.loadedContacts.unshift(app.newContact)
+        //app.loadedContacts.unshift(app.newContact)
 
         fetch(`http://localhost:8000/contacts?user_token=${localStorage.getItem('token')}`, {
           method: 'post',
@@ -111,7 +111,11 @@ document.getElementById('tab1').style.display = 'block'
           body: JSON.stringify(app.newContact)
         })
           .then((response) => {
-            console.log(response)
+            return response.json()
+          })
+          .then((data) => {
+            console.log(data)
+            app.loadAllContacts()
           })
 
         app.newContact = {
@@ -122,11 +126,10 @@ document.getElementById('tab1').style.display = 'block'
           state: '',
           zip: ''
         }
-
       },
       addNewDocument: (event) => {
         event.preventDefault()
-        app.loadedDocuments.unshift(app.newDocument)
+        //app.loadedDocuments.unshift(app.newDocument)
 
         fetch(`http://localhost:8000/documents?user_token=${localStorage.getItem('token')}`, {
           method: 'post',
@@ -137,7 +140,11 @@ document.getElementById('tab1').style.display = 'block'
           body: JSON.stringify(app.newDocument)
         })
           .then((response) => {
-            console.log(response)
+            return response
+          })
+          .then((data) => {
+            console.log(data)
+            app.loadAllDocuments()
           })
 
         app.newDocument = {
@@ -300,21 +307,26 @@ document.getElementById('tab1').style.display = 'block'
       sendMail: (event) => {
         event.preventDefault()
         for (let i = 0; i < app.selectedContacts.length; i++) {
-          if (i > 3) {
+          if (i > 1) {
             alert('Current limit is 3 recipients')
             break
-          }
-          fetch('http://localhost:8000/send_mail', {
-            method: 'post',
-            headers:{
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify([app.selectedDocument, app.selectedContacts[i]])
-          })
-            .then((response) => {
-              console.log(response)
+          } else {
+            fetch('http://localhost:8000/send_mail', {
+              method: 'post',
+              headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify([app.selectedDocument, app.selectedContacts[i]])
             })
+              .then((response) => {
+                event.target.innerHTML = 'ON THE WAY!'
+                setTimeout(function(){ event.target.innerHTML = '<i class="far fa-paper-plane"></i>   SEND MAIL'; }, 2000);
+                console.log(response)
+                app.loadAllHistory()
+              })
+          }
+
         }
       },
       getCreatedDocumentURL: (event) => {

@@ -23,21 +23,27 @@
         <nav>
           <span class="far fa-envelope"></span><span class="logo primary-color">mailmate</span>
         </nav>
-        LOGIN
-        <form class="login-form" action="http://localhost:8000/login" method="post">
-          <input type="text" name="username" value="" placeholder="Username"/>
-          <input type="password" name="password" value="" placeholder="Password"/>
-          <button class="btn" type="submit" name="button">Login</button>
-        </form>
+        <div class="login-register-window">
+          <div class="login-form-div">
+            <span class="secondary-text"><h5>Login</h5></span>
+            <form class="login-form" action="http://localhost:8000/login" method="post">
+              <input type="text" name="username" value="" placeholder="Username"/>
+              <input type="password" name="password" value="" placeholder="Password"/>
+              <button class="btn z-depth-0" type="submit" name="button">Login</button>
+            </form>
+          </div>
 
-        REGISTER
-        <form class="register-form" action="http://localhost:8000/register" method="post">
-          <input type="text" name="username" value="" placeholder="Username"/>
-          <input type="password" name="password" value="" placeholder="Password"/>
-          <button class="btn" type="submit" name="button">register</button>
-        </form>
+          <div class="register-form-div">
+            <span class="secondary-text"><h5>Register</h5></span>
+            <form class="register-form" action="http://localhost:8000/register" method="post">
+              <input type="text" name="username" value="" placeholder="Username"/>
+              <input type="password" name="password" value="" placeholder="Password"/>
+              <button class="btn z-depth-0" type="submit" name="button">register</button>
+            </form>
+          </div>
+        </div>
 
-        ...or register here
+
       </div>
     </div>
   </body>
