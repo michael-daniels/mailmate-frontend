@@ -111,7 +111,7 @@ document.getElementById('tab1').style.display = 'block'
           body: JSON.stringify(app.newContact)
         })
           .then((response) => {
-            return response.json()
+            return response
           })
           .then((data) => {
             console.log(data)
