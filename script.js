@@ -258,6 +258,7 @@ document.getElementById('tab1').style.display = 'block'
           .then((response) => {
             console.log(response)
           })
+        document.getElementById('contactModal').style.display = 'none'
       },
       editDocument: (event) => {
         event.preventDefault()
@@ -272,6 +273,7 @@ document.getElementById('tab1').style.display = 'block'
           .then((response) => {
             console.log(response)
           })
+        document.getElementById('documentModal').style.display = 'none'
       },
       selectContacts: (event) => {
         let contactID = Number(event.target.firstElementChild.innerHTML)
@@ -307,8 +309,8 @@ document.getElementById('tab1').style.display = 'block'
       sendMail: (event) => {
         event.preventDefault()
         for (let i = 0; i < app.selectedContacts.length; i++) {
-          if (i > 1) {
-            alert('Current limit is 3 recipients')
+          if (i > 5) {
+            alert('Current limit is 5 recipients')
             break
           } else {
             fetch('http://localhost:8000/send_mail', {
@@ -335,6 +337,10 @@ document.getElementById('tab1').style.display = 'block'
         console.log('documentURL', documentURL)
         app.createdDocumentURL = documentURL
         //alert(app.createdDocumentURL)
+      },
+      logoutFunction: () => {
+        localStorage.removeItem('token')
+        window.location.href = 'http://localhost:3000/loginregister.html'
       },
     },
     filters: {

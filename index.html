@@ -22,9 +22,11 @@
   <body>
     <div id="app">
       <div class="wrapper">
-
         <nav>
           <span class="far fa-envelope"></span><span class="logo primary-color animated-bounce">mailmate</span>
+          <div class="header-right-info primary-color">
+            <a class="primary-color" v-on:click="logoutFunction" href="#"><i class="fas fa-external-link-alt"></i>  logout</a>
+          </div>
         </nav>
 
         <div class="row">
@@ -225,27 +227,35 @@
             </div>
           </div>
           <div id="tab4" class="tab-4 tab-view">
-            <div class="row history-row">
-              <div class="col m2">
-                <span class="history-header secondary-text">Recipient</span>
-              </div>
-              <div class="col m2">
-                <span class="history-header secondary-text">Document</span>
-              </div>
-              <div class="col m2">
-                <span class="history-header secondary-text">Carrier</span>
-              </div>
-              <div class="col m2">
-                <span class="history-header secondary-text">Tracking Number</span>
-              </div>
-              <div class="col m2">
-                <span class="history-header secondary-text">Created</span>
-              </div>
-              <div class="col m2">
-                <span class="history-header secondary-text">Exp. Delivery Date</span>
-              </div>
-            </div>
-            <ul class="collection contact-document-list">
+
+
+            <ul>
+                <li class="collection-item">
+                  <div class="row">
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Recipient</span>
+                    </div>
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Document</span>
+                    </div>
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Carrier</span>
+                    </div>
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Tracking Number</span>
+                    </div>
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Date Created</span>
+                    </div>
+                    <div class="col m2 secondary-text2 history-item">
+                      <span class="history-header secondary-text">Exp. Delivery Date</span>
+                    </div>
+                  </div>
+                </li>
+                <span class="divider"></span>
+            </ul>
+
+            <ul class="collection contact-document-list history-collection">
               <div class="" v-for="item in loadedHistory">
                 <li class="collection-item">
                   <div class="row">
@@ -276,14 +286,12 @@
           </div>
 
         </div>
-
-      </div>
       <!--Contacts modal-->
         <!-- The Modal -->
         <div id="contactModal" class="modal animated">
 
           <!-- Modal content -->
-          <div id="contactModalContent" class="modal-content animated flipInY">
+          <div id="contactModalContent" class="modal-content animated fadeIn">
             <span class="close">&times;</span>
             <h5 class="primary-color">Edit Contact</h5>
             <form class="upload-contact-form" method="post">
@@ -306,7 +314,7 @@
           <div id="documentModal" class="modal animated">
 
             <!-- Modal content -->
-            <div id="documentModalContent" class="modal-content animated flipInY">
+            <div id="documentModalContent" class="modal-content animated fadeIn">
               <span class="close">&times;</span>
               <h5 class="primary-color">Edit Document</h5>
               <form class="" action="index.html" method="post">
@@ -319,6 +327,7 @@
 
           </div>
           <!--end modal-->
+      </div>
     </div>
 
   </body>
